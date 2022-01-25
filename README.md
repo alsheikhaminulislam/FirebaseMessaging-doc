@@ -2,6 +2,7 @@
 ```
    implementation 'com.google.firebase:firebase-messaging:17.3.4'
 ```
+
 > Get user Token or Topic
 ```
    String token =  FirebaseInstanceId.getInstance().getToken();
@@ -10,11 +11,13 @@
    Un Subscribe
    FirebaseMessaging.getInstance().unsubscribeFromTopic("Topicname");
 ```
+
 > Now Add this
 ```
    dependencies {
       implementation 'com.github.alsheikhaminulislam:IntisarFirebaseMessaging:1.0.0'
    }
+```
 ```
    allprojects {
       repositories {
@@ -23,6 +26,7 @@
       }
    }
 ```
+
 > Server Notification Builder
 ```
    FCMBuilder.Builder builder = new FCMBuilder.Builder(this,"FIREBASE SERVER KEY");
@@ -37,6 +41,7 @@
         builder.setDataFive("");
         builder.setIconURL("");
 ```
+
 > Create FCMNotificationManagerCompat with or without ValueEventListener
 ```
    FCMNotificationManagerCompat fcmNotificationManagerCompat = new FCMNotificationManagerCompat.from(this);
@@ -54,6 +59,7 @@
          }
       });
 ```
+
 > Create a new java class in my case the name is: myFirebaseMessaging.java
 > If you wish to do any message handling beyond receiving notifications on apps in the background, create a new Service ( File &gt; New &gt; Service &gt; Service ) that extends FirebaseMessagingService . This service is necessary to receive notifications in foregrounded apps, to receive data payload, to send upstream messages, and so on.<br>In this service create an onMessageReceived method to handle incoming messages.
 
@@ -72,7 +78,4 @@
             String ICONURL = remoteMessage.getData().get( FCMNotificationManagerCompat.ICONURL);
        }
    }
-```
-```
-```
 ```
