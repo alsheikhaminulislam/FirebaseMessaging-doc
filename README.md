@@ -15,18 +15,12 @@
 > Now Add this
 ```
    dependencies {
-      implementation 'com.github.alsheikhaminulislam:IntisarFirebaseMessaging:1.0.0'
+      implementation files("libs/firebasemessaging-1.0.0.aar")
    }
 ```
 ```
-   allprojects {
-      repositories {
-         ...
-         maven { url 'https://jitpack.io' }
-      }
-   }
+   implementation files("libs/firebasemessaging-1.0.0.aar")
 ```
-
 > Server Notification Builder
 ```
    FCMBuilder.Builder builder = new FCMBuilder.Builder(this,"FIREBASE SERVER KEY");
